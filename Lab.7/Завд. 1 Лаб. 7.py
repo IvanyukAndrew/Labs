@@ -3,11 +3,17 @@ row = int(input("row: "))
 
 import random
 a = [[random.randint(-10,10) for j in range(row)] for i in range(coulmn)]
+print("A =",a)
 
-S = 0
+D = 1
+i = False
 
-for i in range(coulmn):
-    for j in range(row):
-        if i % 2 == 1 and j % 2 == 1 and a[i][j] < 0:
-            S = S * a[i][j]
-print("Добуток відємних елементів матриці з обома непарними індексами: {0}". format(S))
+for x in a[0::2]:
+    for y in x[0::2]:
+        if y < 0:
+            i = True
+            D *= y
+if i:
+    print("Добуток відємних елементів матриці з обома непарними індексами: {0}". format(D))
+else:
+    print("Добуток відємних елементів матриці з обома непарними індексами: 0")
