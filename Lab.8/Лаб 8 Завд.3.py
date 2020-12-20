@@ -1,7 +1,6 @@
-x = int(input("start number x: "))
-
-for i in range(10):
-    y=x
-    x=y+2*i
-
-print("x =",x)
+def count(f=10):
+    if f==0:
+        return 1
+    else:
+        return count(f-1)+2*f
+print("x10 =",count())
